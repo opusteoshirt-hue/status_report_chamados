@@ -47,8 +47,8 @@ Sistema de dashboard analítico para monitoramento de chamados (Incidentes e Wor
                                     +----------------------+-----------------------+
                                     |                      |                       |
                                     v                      v                       v
-                              [ORACLE DB]           [ACTIVE DIRECTORY]         [DOCKER]
-                              (chamados)              (autenticacao)          (container)
+                              [ORACLE DB]           [ACTIVE DIRECTORY]          [DOCKER]
+                              (chamados)              (autenticacao)           (container)
                                     |                      |                       |
                                     +----------------------+-----------------------+
                                                            |
