@@ -41,25 +41,25 @@ Sistema de dashboard analítico para monitoramento de chamados (Incidentes e Wor
 [USUARIO] --> [BROWSER] --> [STREAMLIT SERVER:8501] --> [APP.PY]
                                                            |
                                                            v
-                                              [AUTH_MANAGER.PY]
+                                                  [AUTH_MANAGER.PY]
                                                            |
                                                            v
-                                    +----------------------+----------------------+
-                                    |                      |                      |
-                                    v                      v                      v
-                            [ORACLE DB]             [ACTIVE DIRECTORY]      [DOCKER]
-                            (chamados)              (autenticacao)          (container)
-                                    |                      |                      |
-                                    +----------------------+----------------------+
+                                    +----------------------+-----------------------+
+                                    |                      |                       |
+                                    v                      v                       v
+                              [ORACLE DB]           [ACTIVE DIRECTORY]         [DOCKER]
+                              (chamados)              (autenticacao)          (container)
+                                    |                      |                       |
+                                    +----------------------+-----------------------+
                                                            |
                                                            v
-                                              [DADOS PROCESSADOS]
+                                                 [DADOS PROCESSADOS]
                                                            |
                                                            v
-                                                [DASHBOARD/GRAPHS]
+                                                  [DASHBOARD/GRAPHS]
                                                            |
                                                            v
-                                                  [USUARIO FINAL]
+                                                    [USUARIO FINAL]
 ```
 
 ---
