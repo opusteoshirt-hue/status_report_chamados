@@ -1,0 +1,37 @@
+﻿version: '1.0'
+
+services:
+  bmcview:
+    build: .
+    container_name: bmcview_dashboard
+    ports:
+      - "PORT:PORT"
+    environment:
+      - TZ=${TZ}
+      # Oracle
+      - ORACLE_USER=${ORACLE_USER}
+      - ORACLE_PASSWORD=${ORACLE_PASSWORD}
+      - ORACLE_DSN=${ORACLE_DSN}
+      # Active Directory
+      - AD_SERVER=${AD_SERVER}
+      - AD_PORT=${AD_PORT}
+      - AD_DOMAIN=${AD_DOMAIN}
+      - AD_USER=${AD_USER}
+      - AD_PASSWORD=${AD_PASSWORD}
+      # Admin
+      - ADMIN_USER=${ADMIN_USER}
+      # Email
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+    volumes:
+      - ./data_cache:/app/data_cache
+      - ./users_data:/app/users_data
+    restart: unless-stopped
+    networks:
+      - bmcview_network
+
+networks:
+  bmcview_network:
+    driver: bridge
